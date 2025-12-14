@@ -91,32 +91,3 @@ This Flutter project demonstrates a scalable and maintainable architecture using
 > The `initNetworkDependency()` function is created only to showcase my skills in integrating APIs using headers with Dependency Injection (DI) and BLoC architecture.
 
 
-## Folder Structure
-
-lib/
-├─ core/                 # Core utilities, constants, helpers, DI initialization
-├─ data/                 # Data layer: API services, local storage, repositories implementations
-├─ domain/               # Domain layer: Entities, use cases, business logic interfaces
-├─ presentation/         # UI layer (features organized by domain)
-│  ├─ auth/              # Authentication feature
-│  │  ├─ bloc/           # Auth BLoC classes (state management)
-│  │  ├─ repository/     # Auth repositories for API/local interactions
-│  │  ├─ view/           # Auth screens/widgets
-│  │  └─ auth_dependency.dart  # DI setup for auth feature
-│  ├─ feedback/          # Feedback feature
-│  │  ├─ bloc/           # Feedback BLoCs
-│  │  ├─ model/          # Feedback data models
-│  │  ├─ repository/     # Feedback repositories
-│  │  └─ view/           # Feedback UI screens
-│  │     └─ question_detail_dependencies.dart  # DI for question detail feature
-│  ├─ history/           # History feature
-│  │  ├─ bloc/           # History BLoCs
-│  │  ├─ model/          # History data models
-│  │  ├─ repository/     # History repositories
-│  │  ├─ view/           # History UI screens
-│  │  └─ attempt_dependencies.dart  # DI setup for attempt feature
-│  └─ home/              # Home feature (UI, bloc, repository if any)
-├─ app.dart               # App entry point and main widget
-└─ main.dart              # Main function, runApp()
-
-
