@@ -87,6 +87,8 @@ This Flutter project demonstrates a scalable and maintainable architecture using
 - **Usage in UI:** Injected BLoCs into the widget tree using `BlocProvider`, e.g.:
   ```dart
   BlocProvider<AuthBloc>(create: (context) => sl<AuthBloc>())
+> **Note:** This project does not actually use any external API.  
+> The `initNetworkDependency()` function is created only to showcase my skills in integrating APIs using headers with Dependency Injection (DI) and BLoC architecture.
 
 
 ## Folder Structure
