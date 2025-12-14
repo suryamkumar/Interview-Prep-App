@@ -60,6 +60,34 @@ The app allows users to view interview questions, submit answers, store attempts
 - `intl` – Timestamp formatting  
 
 ---
+# Flutter App - Dependency Injection & BLoC Integration
+
+This Flutter project demonstrates a scalable and maintainable architecture using **Dependency Injection (DI)** with **GetIt**, **Hive** for local storage, **Dio** for networking, and **BLoC** for state management.
+
+## Dependency Injection & BLoC Integration with GetIt
+
+- **Dependency Injection:** Implemented using `GetIt` to manage app-wide services, repositories, and BLoCs efficiently.
+
+- **Network Layer:** Configured `Dio` with a custom `ApiClient`, including:
+  - Base URL and headers
+  - Token-based authentication via `SecureStorageHelper.`
+  - Logging interceptors
+
+- **Repository Layer:** Created `AttemptRepository` for local Hive storage, managing `AttemptModel` data in a type-safe Hive box.
+
+- **BLoC Layer:** Registered BLoCs (`AttemptBloc`, `AuthBloc`, etc.) with GetIt factories for lazy initialization, ensuring decoupled state management.
+
+- **Initialization:** Structured DI in modular `initDependencies()` methods:
+  - `initNetworkDependency()`
+  - `initAuthDependencies()`
+  - `initHomeDependencies()`
+  - `initQuestionDetailDependencies()`
+  - `initAttemptDependencies()`
+
+- **Usage in UI:** Injected BLoCs into the widget tree using `BlocProvider`, e.g.:
+  ```dart
+  BlocProvider<AuthBloc>(create: (context) => sl<AuthBloc>())
+
 
 ## Folder Structure
 
